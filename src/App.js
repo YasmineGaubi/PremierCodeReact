@@ -20,7 +20,7 @@ class App extends Component{
       title: 'Glasses 2O2O',
       categorie: 'Glasses',
       description: 'Cool Glasses',
-      completed:false
+      
     },
     {
       id: 2,
@@ -28,7 +28,6 @@ class App extends Component{
       title: 'Sunglasses 2O2O',
       categorie: 'Sun',
       description: 'Very Cool Dresess',
-      completed:true
     },
     {
       id: 3,
@@ -36,7 +35,6 @@ class App extends Component{
       title: 'Jewelry 2O2O',
       categorie: 'Jewelry',
       description: 'Diamond',
-      completed:false     
     },
    ],
    create:false,
@@ -46,7 +44,7 @@ class App extends Component{
   //longueurdetodolist = this.state.todos.length
 
    // method eli tkhalini kif nenzel checkbox twali line-through title
-   markComplete = (id) => {
+    /*markComplete = (id) => {
       this.setState({products: this.state.products.map (product => {
            if(product.id === id){
               //toggle state
@@ -54,7 +52,7 @@ class App extends Component{
            }
              return product;
       }) });
-     } 
+     } */
 
      //Edit Todo
      editTodo =objectlifihupdatejdid => {
@@ -63,6 +61,8 @@ class App extends Component{
               product.title =objectlifihupdatejdid.title
               product.description =objectlifihupdatejdid.description
               product.categorie =objectlifihupdatejdid.categorie
+              product.src =objectlifihupdatejdid.src
+
         }
       });
       // this.setState({
@@ -123,7 +123,7 @@ class App extends Component{
               <Route  path="/" render={props => (
 
                 <React.Fragment>
-                    <AddTodo addTodo={this.addTodo} status={this.state.create}  editTodo={this.editTodo}/>
+                    <AddTodo addTodo={this.addTodo} status={this.state.create} editstatus={this.editstatus}  editTodo={this.editTodo}/>
                     <Todos products={this.state.products} 
                            delTodo={this.delTodo}
                            editstatus={this.editstatus}

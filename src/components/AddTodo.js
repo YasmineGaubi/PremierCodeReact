@@ -22,6 +22,8 @@ export class AddTodo extends Component {
     onSubmit = (e) => {
         if (this.props.status == true) {
             this.props.editTodo(this.state)
+            this.props.editstatus()
+            this.setState({ title: '', description: '',categorie: ''}); //the title back to nothing after it's submitted
         }else{
             this.props.addTodo(this.state);
             this.setState({ title: '', description: '',categorie: ''}); //the title back to nothing after it's submitted
